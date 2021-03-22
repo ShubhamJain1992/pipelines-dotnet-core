@@ -15,7 +15,7 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
-- script: dotnet test pipelines_dotnet_core --logger trx --collect "Code Coverage"
+- script: dotnet test pipelines-dotnet-core --logger trx --collect "Code Coverage"
 - task: PublishTestResults@2
   condition: succeededOrFailed()
   inputs:
